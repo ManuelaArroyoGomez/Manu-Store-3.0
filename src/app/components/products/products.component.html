@@ -1,4 +1,6 @@
 <button class="create" (click)="createNewProduct()">Create</button>
+<button class="create" (click)="onShowDetail('12321')">detalle not found</button>
+
 <div class="products--grid">
   <app-product
     [product]="product"
@@ -10,6 +12,7 @@
 </div>
 
 <div class="product-detail" [class.active]="showProductDetail">
+  {{ statusDetail }}
   <div *ngIf="productChosen">
     <button class="close" (click)="toggleProductDetail()">
       <img src="assets/svg/cruz.svg" alt="close">
