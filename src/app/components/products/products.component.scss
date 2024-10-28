@@ -1,3 +1,10 @@
+.create {
+  text-decoration: underline;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
 .products--grid {
   display: flex;
   flex-direction: column;

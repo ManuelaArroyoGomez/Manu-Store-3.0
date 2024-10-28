@@ -65,10 +65,10 @@ export class ProductsComponent implements OnInit {
 
   createNewProduct() {
     const product: CreateProductDTO = {
-      title: 'Nuevo producto',
-      price: 1000,
-      description: 'bla bla bla',
-      images: [`https://placeimg.com/640/480/any?random=${Math.random()}`],
+      title: 'Top Bandeau manga larga',
+      price: 70,
+      description: 'Top estilo Bandeau de manga larga, de material transparente y ajustado. El diseño es sin hombros, lo que le da un toque atrevido y moderno, con las mangas hechas del mismo tejido translúcido. El color es un tono caqui oscuro con un patrón sutil que parece camuflaje, lo que añade un elemento interesante al diseño. El top es corto, terminando justo por encima de la cintura.',
+      images: ['assets/images/product1.jpg'],
       categoryId: 2,
     }
     this.productsService.create(product)
