@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service'
 import { UsersService } from './services/users.service'
 
+import { FileService } from './services/file.service'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +18,7 @@ export class AppComponent {
   constructor(
     private authService: AuthService,
     private usersService: UsersService,
+    private fileService: FileService
   ){}
 
   onLoaded(img: string) {
@@ -50,4 +53,9 @@ export class AppComponent {
   //     console.log(profile);
   //   })
   // }
+
+  downloadPdf() {
+    this.fileService.getFile('my.pdf', 'https://api.escuelajs.co/api/v1/files/f3a5.png', 'application/png')
+    .subscribe()
+  }
 }
