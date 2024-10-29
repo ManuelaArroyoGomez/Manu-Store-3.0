@@ -14,6 +14,7 @@ export class AppComponent {
   imgParent = '';
   showImg = true;
   token = '';
+  imgRta = '';
 
   constructor(
     private authService: AuthService,
@@ -57,5 +58,16 @@ export class AppComponent {
   downloadPdf() {
     this.fileService.getFile('my.pdf', 'https://api.escuelajs.co/api/v1/files/f3a5.png', 'application/png')
     .subscribe()
+  }
+
+  onUpload(event: Event) {
+    const element = event.target as HTMLInputElement;
+    const file = element.files?.item(0);
+    if (file) {
+      this.fileService.uploadFile(file)
+      .subscribe(rta => {
+        this.imgRta = rta.location;
+      })
+    }
   }
 }
