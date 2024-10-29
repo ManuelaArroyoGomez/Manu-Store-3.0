@@ -37,17 +37,17 @@ export class AppComponent {
     });
   }
 
-  login() {
-    this.authService.login('rafael.Valencia','2003')
-    .subscribe(rta => {
-      this.token = rta.acess_token;
-    });
-  }
+  // login() {
+  //   this.authService.loginAndGet('rafael.Valencia','2003')
+  //   .subscribe(user => {
+  //     this.profile = user;
+  //   });
+  // }
 
-  getProfile() {
-    this.authService.profiel(this.token)
-    .subscribe(profile => {
-      console.log(profile);
-    })
-  }
+  // getProfile() {
+  //   this.authService.profiel(this.token)
+  //   .subscribe(profile => {
+  //     console.log(profile);
+  //   })
+  // }
 }
