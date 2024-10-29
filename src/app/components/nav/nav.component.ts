@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
 
   activeMenu = false;
   counter = 0;
-  token = '';
+  // token = '';
   profile: User | null = null;
 
   constructor(
@@ -32,19 +32,17 @@ export class NavComponent implements OnInit {
   }
 
   login() {
-    this.authService.login('rafael.Valencia','2003')
-    .subscribe(rta => {
-      this.token = rta.acess_token;
-      console.log(this.token);
-      this.getProfile();
+    this.authService.loginAndGet('rafael.Valencia','2003')
+    .subscribe(user => {
+      this.profile = user;
     });
   }
 
-  getProfile() {
-    this.authService.profiel(this.token)
-    .subscribe(user => {
-      this.profile = user;
-    })
-  }
+  // getProfile() {
+  //   this.authService.getProfiel(this.token)
+  //   .subscribe(user => {
+  //     this.profile = user;
+  //   })
+  // }
 
 }
